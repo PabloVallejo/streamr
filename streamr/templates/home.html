@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+<!-- Home view -->
+{% block main_content %}
+
+    <div class="container">
+
+        <div class="home">
+
+            <div class="sidebar">
+
+                <div class="post-form">
+
+                    <div class="header">
+                        <div class="thumbnail">
+                            <img src="{{ STATIC_URL }}images/beckham.jpg" alt="">
+                        </div>
+                        <div class="description">
+                            <h3>David Beckham</h3>
+                            <p>Professional footbal player and model.</p>
+                        </div>
+                    </div>
+
+                    <div class="new-post">
+                        <textarea class="post-content" placeholder="Whats on your mind?" name="" id="" cols="20" rows="5"></textarea>
+                    </div>
+
+                    <div class="footer">
+                        <input class="btn btn-warning" type="submit" value="Post">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="stream">
+
+                <div class="post clearfix">
+                    <div class="thumbnail">
+                        <img src="{{ STATIC_URL }}images/miranda.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Miranda Kerr</h3>
+                        <p>
+                            The best reason to start an organization is to make meaning --
+                            to create a product or service to make the world a better place.
+                        </p>
+                    </div>
+                    <div class="date">
+                        4 Hours
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

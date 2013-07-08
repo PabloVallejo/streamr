@@ -1,0 +1,47 @@
+{
+  "scripts": [
+     {
+      "input_dir": "streamr/assets/scripts/lib",
+      "input_files": [
+      ],
+      "output_dir": "streamr/assets/scripts/lib",
+      "output_file": "libraries.min.js",
+      "minify": true,
+      "lint": false,
+      "lint_config": {}
+    },
+    {
+      "input_dir": "streamr/assets/scripts/",
+      "input_files": [
+      ],
+      "output_dir": "streamr/assets/scripts",
+      "output_file": "scripts.min.js",
+      "minify": false,
+      "lint": false,
+      "lint_config": {}
+    }
+  ],
+  "styles": {
+    "input_dir": "streamr/assets/less/",
+    "input_files": [
+      "variables.less",
+      "mixins.less",
+      "reset.less",
+      "type.less",
+      "scaffolding.less",
+      "layouts.less",
+      "home.less",
+      "login.less",
+      "forms.less",
+      "buttons.less"
+    ],
+    "output_dir": "streamr/assets/css",
+    "output_file": "styles.min.css",
+    "minify": true,
+    "minify_config": {
+      "yuicompress": true
+    },
+    "lint": true,
+    "lint_config": {}
+  }
+}
