@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from stream.views import home, css_tests
+from stream.views import home, css_tests, login
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -18,6 +18,9 @@ urlpatterns = patterns('',
 
     # CSS Tests
     url( r'^css-tests/?$', css_tests ),
+
+    # Login
+    url( r'^login/?$', login ),
 
 
     # Uncomment the admin/doc line below to enable admin documentation:

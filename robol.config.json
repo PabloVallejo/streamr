@@ -13,6 +13,7 @@
     {
       "input_dir": "streamr/assets/scripts/",
       "input_files": [
+        "handlers/debug.coffee"
       ],
       "output_dir": "streamr/assets/scripts",
       "output_file": "scripts.min.js",
