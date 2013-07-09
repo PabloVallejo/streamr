@@ -3,6 +3,8 @@
      {
       "input_dir": "streamr/assets/scripts/lib",
       "input_files": [
+        "jquery-1.10.2.js",
+        "gillie.js"
       ],
       "output_dir": "streamr/assets/scripts/lib",
       "output_file": "libraries.min.js",
@@ -13,6 +15,8 @@
     {
       "input_dir": "streamr/assets/scripts/",
       "input_files": [
+        "boot.coffee",
+        "helpers/utilities.coffee",
         "handlers/debug.coffee"
       ],
       "output_dir": "streamr/assets/scripts",

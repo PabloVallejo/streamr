@@ -5,42 +5,44 @@
 
     <div class="container">
 
-        <div class="login">
+        <div class="login-page">
 
             <div class="outline">
-                <!-- <h1>Streamr</h1> -->
-                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
                 <img src="{{ STATIC_URL }}images/home-demo.jpg" alt="">
                 <h2>Streamr</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elig set  Lorem ipsum dolor sit amet consectetur adipisicing elig set do. Lorem ipsum dolor sit amet consectetur adipisicing elig set do.do.</p>
             </div>
 
             <div class="auth">
-                <div class="login-form">
+                <div class="login-component">
 
                     <div class="header">
                         <h4>Login To Your Account</h4>
-                    </div>
+                    </div>  
 
-                    <div class="content">
-                        <div>
-                            <label for="#">Username</label>
-                            <input class="input-block-level" type="text">
-                        </div>
-                        <div>
-                            <label for="#">Password</label>
-                            <input class="input-block-level" type="text">
-                        </div>
-                        <center>
-                            <p>
-                                <a href="#">Or Register</a>
-                            </p>
-                        </center>
-                    </div>
+                    <form class="login-form">
 
-                    <div class="footer">
-                        <input class="btn btn-block btn-warning" type="submit" value="Sign In">
-                    </div>
+                        <div class="content">
+                            <div>
+                                <label for="#">Username</label>
+                                <input name="username" class="input-block-level" type="text">
+                            </div>
+                            <div>
+                                <label for="#">Password</label>
+                                <input name="password" class="input-block-level" type="text">
+                            </div>
+                            <center>
+                                <p>
+                                    <a href="#">Or Register</a>
+                                </p>
+                            </center>
+                        </div>
+
+                        <div class="footer">
+                            <input class="btn btn-block btn-warning" type="submit" value="Sign In">
+                        </div>
+
+                    </form>
 
                 </div>
 
