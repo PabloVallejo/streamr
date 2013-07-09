@@ -1,25 +1,28 @@
 {
   "scripts": [
      {
-      "input_dir": "streamr/assets/scripts/lib",
+      "input_dir": "streamr/assets/js/lib",
       "input_files": [
         "jquery-1.10.2.js",
         "gillie.js"
       ],
-      "output_dir": "streamr/assets/scripts/lib",
+      "output_dir": "streamr/assets/js/lib",
       "output_file": "libraries.min.js",
       "minify": true,
       "lint": false,
       "lint_config": {}
     },
     {
-      "input_dir": "streamr/assets/scripts/",
+      "input_dir": "streamr/assets/js/",
       "input_files": [
-        "boot.coffee",
-        "helpers/utilities.coffee",
-        "handlers/debug.coffee"
+        "boot.js",
+        "helpers/utilities.js",
+        "models/user.js",
+        "views/user.js",
+        "controllers/user.js",
+        "handlers/user.js"
       ],
-      "output_dir": "streamr/assets/scripts",
+      "output_dir": "streamr/assets/js",
       "output_file": "scripts.min.js",
       "minify": false,
       "lint": false,
