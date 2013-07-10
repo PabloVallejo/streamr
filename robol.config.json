@@ -4,6 +4,8 @@
       "input_dir": "streamr/assets/js/lib",
       "input_files": [
         "jquery-1.10.2.js",
+        "jquery.cookie.js",
+        "json-2.js",
         "gillie.js"
       ],
       "output_dir": "streamr/assets/js/lib",

@@ -4,7 +4,7 @@
 ( function( $, window, document ) {
 
 	var Utils = function() {
-
+        return this.ajaxSetup();
 	}
 
 	Utils.prototype = {
@@ -106,15 +106,15 @@
                 var result
                 ,   defaults = {
                         type: 'post'
-                    // ,   url: aUrl
+                    ,   dataType: 'json'
                     ,   data: data
                     ,   async: false
                     ,   success: function( data ) {
-                                result = data;
+                            result = data;
                         }
 
                     ,   error: function ( XMLHttpRequest, textStatus, errorThrown ) {
-                                console.log( "error :" + XMLHttpRequest.responseText );
+                            console.log( "error :" + XMLHttpRequest.responseText );
                         }
                     }
 
@@ -126,6 +126,62 @@
 
                 // Return the response object
                 return result;
+
+            }
+
+
+            /**
+            * Checks whether the current HTTP verb require CSRF protection
+            * @param { string }
+            * @return { bool }
+            */
+        ,   csrfSafeMethod: function( method ) {
+                return ( /(GET|HEAD|OPTIONS|TRACE)$/.test( method ) );
+            }
+
+
+            /**
+            * Tests that a given URL is a same-origin URL
+            * @param { string } url to tests
+            * @return { bool }
+            */
+        ,   sameOrigin: function( url ) {
+
+                var host = document.location.host // Host + post
+                ,   protocol = document.location.protocol
+                ,   sr_origin = '//' + host
+                ,   origin = protocol + sr_origin;
+
+                // Allow absolute or scheme relative URLs to same origin
+                return ( url == origin || url.slice( 0, origin.length + 1 ) == origin + '/' ) ||
+                ( url == sr_origin || url.slice( 0, sr_origin.length + 1 ) == sr_origin + '/' ) ||
+
+                // Or any other URL that isn't scheme relative or absolute i.e relative.
+                !( /^(\/\/|http:|https:).*/.test( url ) );
+
+            }
+
+            /**
+            * Adds the CSRFToken header to the AJAX requests
+            */
+        ,   ajaxSetup: function() {
+
+                var _this = this;
+
+                $.ajaxSetup({
+
+                    beforeSend: function( xhr, settings ) {
+
+                        // Send the token to same-origin, relative URLs only.
+                        // Send the token only if the method warrants CSFR protection
+                        // using the CSRFToken value acquired earlier
+                        if ( ! _this.csrfSafeMethod( settings.type ) && _this.sameOrigin( settings.url ) ) {
+                            var csrfToken = $.cookie( 'csrftoken' );
+                            xhr.setRequestHeader( 'X-CSRFToken', csrfToken );
+                        }
+                    }
+
+                });
 
             }
 
