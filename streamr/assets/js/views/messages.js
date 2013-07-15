@@ -13,7 +13,21 @@
 			}
 
 		,	handleNewStatus: function( data ) {
-				console.log( data );
+					
+				var container = '.home-page .stream';
+
+				if ( data.status == 600 ) {
+					console.log( data.data.error_text )
+				}
+
+				else  {
+					html = new EJS({ url: window.App.Config.templtes })
+						.render({});
+
+					$( container ).append( html );
+					console.log( html );
+				}
+
 			}	
 
 	});

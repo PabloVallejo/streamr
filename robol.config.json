@@ -6,6 +6,7 @@
         "jquery-1.10.2.js",
         "jquery.cookie.js",
         "json-2.js",
+        "ejs.js",
         "gillie.min.js"
       ],
       "output_dir": "streamr/assets/js/lib",

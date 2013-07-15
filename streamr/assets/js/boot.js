@@ -8,4 +8,7 @@ window.App = {
   	,	Controllers: {}
   	,	Views: {}
   	,	Helpers: {}
+  	,	Config: {
+  			templates: '/assets/js/templates/'
+  		}
 };
