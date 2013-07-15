@@ -2,14 +2,13 @@
 
 <!-- Login template -->
 {% block main_content %}
-
     <div class="container">
 
         <div class="login-page">
 
             <div class="outline">
                 <img src="{{ STATIC_URL }}images/home-demo.jpg" alt="">
-                <h2>Streamr</h2>
+                <h3>Whats It?</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elig set  Lorem ipsum dolor sit amet consectetur adipisicing elig set do. Lorem ipsum dolor sit amet consectetur adipisicing elig set do.do.</p>
             </div>
 
@@ -31,6 +30,11 @@
                                 <label for="#">Password</label>
                                 <input name="password" class="input-block-level" type="text">
                             </div>
+
+                            <div class="notification">
+                                <p class="error">Either your password or username is incorrect.</p>
+                            </div>
+
                             <center>
                                 <p>
                                     <a href="#">Or Register</a>
@@ -39,7 +43,7 @@
                         </div>
 
                         <div class="footer">
-                            <input class="btn btn-block btn-warning" type="submit" value="Sign In">
+                            <input class="btn btn-large btn-block btn-warning" data-original-text="Sign In" type="submit" value="Sign In">
                         </div>
 
                     </form>

@@ -60,14 +60,18 @@ input[type="color"],
 
 
     // Appeareance
-    border: 1px solid #b0b0b0;
-    .box-shadow( inset 0 1px 2px rgba(0, 0, 0, 0.1 ) );
+    // border: 1px solid #b0b0b0;
+    // .box-shadow( inset 0 1px 2px rgba(0, 0, 0, 0.1 ) );
     .transition(~"border linear .2s, box-shadow linear .2s");
+    
+    border: 1px solid #d0d0d0;
+    border-top: 1px solid #ccc;
+    .box-shadow( inset 0 1px 2px rgba(0,0,0,0.1) );
 
     // Focus state
     &:focus {
         background-color: darken( #fff, 2% );
-        border: 1px solid darken( #fff, 50% );
+        border: 1px solid darken( #fff, 30% );
         outline: 0;
     }
 

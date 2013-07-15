@@ -4,15 +4,10 @@
 */
 ( function( $, window, document, utils ) {
 
-	var User = function( a ) {
-
-		// Class attributes can be set here
-	}
-
-	User.prototype = {
+	var User = Gillie.Model.extend({
 
 			// Logs users in and emits an event
-			// on the model
+	 		// on the model
 			login: function( creds ) {
 
 				var	_this = this
@@ -23,25 +18,14 @@
 							async: true
 						,	url: '/login'
 						,	success: function( data ) {
-								console.log( data );
-
-								// Model
-								gillie.trigger( _this, 'event', {} );
-								
-								// view.js
-								gillie.on( model, 'event', this.method );
-								gillie.on( model, 'sync', this.method );
-								gillie.on( model, 'save', this.method );
-								
-								$( _this ).trigger( 'event', {} );
-
+								_this.trigger( 'loginSync', data );
 							}
 					}
 
 				return utils.ajax( options, data );
 			}
 
-	}
+	});
 
 	// Global Exposition
 	window.App.Models.User = new User();

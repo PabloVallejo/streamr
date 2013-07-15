@@ -5,7 +5,7 @@
 ( function( $, window, document, view, controller, utils ) {
 
 
-	var User = Gillie.extend({
+	var User = Gillie.Handler.extend({
 
 			// Initialize
 			initialize: function()  {
@@ -20,6 +20,15 @@
 			// Login 
 		,	login: function( e ) {
 				e.preventDefault();
+
+				var target = e.currentTarget
+				,	submit = $( target ).find( 'input[type="submit"]' );
+
+				if ( submit.hasClass( 'disabled' ) ) return;
+				submit
+					.addClass( 'disabled' )
+					.attr( 'value', 'Working...' );
+
 				data = utils.getFormData( e.currentTarget );
 				return controller.login( data );
 			}

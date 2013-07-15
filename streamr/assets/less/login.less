@@ -5,15 +5,15 @@
 .container {}
 
 .login-page {
-    margin-top: 50px;
+    margin-top: 25px;
 
     .outline {
         width: 600px;
-        padding: 15px;
+        // padding: 15px;
         float: left;
-        background: #faf9f7;
-        border-bottom: 1px solid #ccc6bd;
-        .box-shadow( 0 1px 0px rgba( 194, 186, 175, .9 ) );
+        // background: #fff;
+        // border-bottom: 1px solid #d8d8d8;
+        // .box-shadow( 0 1px 0px rgba( 216, 216, 216, .9 ) );
         .border-radius( 2px );
     }
 
@@ -23,7 +23,8 @@
     }
 
     .outline img {
-        border: 1px solid #bfb19e;
+        // border: 1px solid #bfb19e;
+        .border-radius( 2px );
         width: 600px;
         height: 300px;
 
@@ -34,9 +35,9 @@
 // Login form
 .login-component {
     width: 300px;
-    background: #faf9f7;
-    border-bottom: 1px solid #ccc6bd;
-    .box-shadow( 0 1px 0px rgba( 194, 186, 175, .9 ) );
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    .box-shadow( 0 1px 0px rgba( 224, 224, 224, .9 ) );
     .border-radius( 2px );
 
 
@@ -49,9 +50,21 @@
         padding: 15px 15px 0 15px;
     }
 
+    .content .notification {
+        & > p { display: none; }
+
+        .error {
+            color: @errorText;
+        }
+
+        .success {
+            color: @successText;
+        }
+    }
+
     .footer {
         padding: 15px;
-        background-color: darken( #f8f3ef, 2% );
+        // background-color: darken( #f8f3ef, 2% );
         .border-radius( 0 0 2px 2px );
     }
 }
