@@ -10,19 +10,9 @@
 	 		// on the model
 			login: function( creds ) {
 
-				var	_this = this
-				,	data = {
-						creds: JSON.stringify( creds )
-					}
-				,	options = {
-							async: true
-						,	url: '/login'
-						,	success: function( data ) {
-								_this.trigger( 'loginSync', data );
-							}
-					}
+				var data = { creds: creds };
+				utils.sync( '/login', data, 'loginSync', this );
 
-				return utils.ajax( options, data );
 			}
 
 	});

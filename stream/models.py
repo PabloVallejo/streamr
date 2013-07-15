@@ -6,10 +6,10 @@ from django.contrib.auth.models import User
 
 
 # Messages model
-class Messages( models.Model ):
+class Message( models.Model ):
     author = models.ForeignKey( User )
     content = models.TextField()
-    pub_date = models.DateTimeField()
+    pub_date = models.DateTimeField( auto_now_add = True, blank = True )
 
     def __unicode( self ):
         return self.content

@@ -1,6 +1,6 @@
 /**
 *
-* Handler User
+* Handler: User
 */
 ( function( $, window, document, view, controller, utils ) {
 

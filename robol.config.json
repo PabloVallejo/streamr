@@ -20,9 +20,13 @@
         "boot.js",
         "helpers/utilities.js",
         "models/user.js",
+        "models/messages.js",
         "views/user.js",
+        "views/messages.js",
         "controllers/user.js",
-        "handlers/user.js"
+        "controllers/messages.js",
+        "handlers/user.js",
+        "handlers/messages.js"
       ],
       "output_dir": "streamr/assets/js",
       "output_file": "scripts.min.js",

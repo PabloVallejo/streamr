@@ -96,6 +96,34 @@
             }
 
             /**
+            * Sends an AJAX request to the database
+            * in the specified `url` passing it `data` and
+            * after that, triggers `event`
+            *
+            * @param { object }
+            * @param { object }
+            * @param { object }
+            * @return { object }
+            */
+        ,   sync: function( url, data, event, context ) {
+
+                for ( k in data ) {
+                    data[ k ] = JSON.stringify( data[ k ] );
+                }
+
+                options = {
+                        async: true
+                    ,   url: url
+                    ,   success: function( data ) {
+                            context.trigger( event, data );
+                        }
+                }
+
+                return this.ajax( options, data );
+
+            }
+
+            /**
             * Helps in the process of making a ajax requests
             *
             * @param { object } Options for configuring the ajax request
