@@ -12,14 +12,14 @@
 
 		,	el: '.home-page'
 
-		,	events: {	
+		,	events: {
 				'submit .update-status': 'updateStatus'
 			}
 
 			// Handle status updates
 		,	updateStatus: function( e ) {
 				e.preventDefault();
-				
+
 				var target = e.currentTarget
 				,	submit = $( target ).find( 'input[type="submit"]' );
 

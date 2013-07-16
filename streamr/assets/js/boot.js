@@ -9,6 +9,6 @@ window.App = {
   	,	Views: {}
   	,	Helpers: {}
   	,	Config: {
-  			templates: '/assets/js/templates/'
+  			templates: '/static/js/templates/'
   		}
 };

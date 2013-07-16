@@ -91,5 +91,9 @@ def update_status( request ):
 
 	message.save()
 
-	response = json.dumps( { 'status': 200, 'data': { 'text': 'Message created' } } )
+	data = {
+		'content': data[ 'content' ],
+		'full_name': author.first_name + ' ' + author.last_name
+	}
+	response = json.dumps( { 'status': 200, 'data': data } )
 	return HttpResponse( response )
