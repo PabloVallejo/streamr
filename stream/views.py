@@ -6,7 +6,7 @@ from stream.forms import LoginForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from stream.models import Message
-import json
+import json, re
 
 
 # Home View
@@ -89,11 +89,17 @@ def update_status( request ):
 		content = data[ 'content' ]
 	)
 
+	# Save message
 	message.save()
 
 	data = {
 		'content': data[ 'content' ],
 		'full_name': author.first_name + ' ' + author.last_name
 	}
+
+	name_parts = re.findall( '\w+', data[ 'full_name' ] )
+	if len( name_parts ) < 1:
+		data[ 'full_name' ] = 'Unknown Name'
+
 	response = json.dumps( { 'status': 200, 'data': data } )
 	return HttpResponse( response )

@@ -19,6 +19,8 @@ class Message( models.Model ):
 class UserMeta( models.Model ):
 	user = models.ForeignKey( User )
 	avatar_src = models.URLField()
+	bio = models.TextField()
 
 	def __unicode__( self ):
 		return self.user.first_name
+
