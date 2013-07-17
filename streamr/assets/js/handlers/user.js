@@ -17,7 +17,7 @@
 			}
 
 
-			// Login 
+			// Login
 		,	login: function( e ) {
 				e.preventDefault();
 
